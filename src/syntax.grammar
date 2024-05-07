@@ -1,26 +1,23 @@
 @top Program { expression* }
 
-@skip { space | LineComment }
+@skip { newline }
 
 expression {
-  Identifier |
   String |
-  Boolean |
-  Application { "(" expression* ")" }
+  Separator |
+  Value
 }
 
 @tokens {
-  Identifier { $[a-zA-Z_\-0-9]+ }
+  Separator { $[,;] }
 
+  Value { ![,;\n]+ }
+  
   String { '"' (!["\\] | "\\" _)* '"' }
 
-  Boolean { "#t" | "#f" }
+  newline { $[\n]}
 
-  LineComment { ";" ![\n]* }
-
-  space { $[ \t\n\r]+ }
-
-  "(" ")"
+  @precedence { String, Separator, Value }
 }
 
 @detectDelim

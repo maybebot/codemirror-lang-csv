@@ -1,41 +1,27 @@
-# Booleans
-
-#t
-#f
-
-==>
-
-Program(Boolean, Boolean)
-
-# Identifiers
-
-one
-Two_Three
+# Separators
+,
+;
 
 ==>
 
-Program(Identifier, Identifier)
+Program(Separator, Separator)
 
 # Strings
 
 "hello"
-"one\"\\two"
+"world;s"
+"to,day"
 
 ==>
 
-Program(String, String)
+Program(String, String, String)
 
-# Applications
 
-(begin
-  (when #t
-    (print (concat "hello" " " "world")))
-  (print "DONE"))
+# Example
+
+one;"two";three;four
+"first";second;;"fourth"
 
 ==>
 
-Program(Application(
-  Identifier,
-  Application(Identifier, Boolean, Application(
-    Identifier, Application(Identifier, String, String, String)))
-  Application(Identifier, String)))
+Program(Value,Separator,String,Separator,Value,Separator,Value,String,Separator,Value,Separator,Separator,String)
