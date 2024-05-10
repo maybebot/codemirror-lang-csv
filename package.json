@@ -1,6 +1,6 @@
 {
   "name": "codemirror-lang-csv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "csv language support for CodeMirror",
   "scripts": {
     "test": "mocha test/test.js",
@@ -27,6 +27,10 @@
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-ts": "^3.0.2",
     "typescript": "^4.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maybebot/codemirror-lang-csv.git"
   },
   "license": "MIT"
 }
